@@ -1,0 +1,12 @@
+{% extends 'user_auth/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to User Authentication System</h1>
+    {% if user.is_authenticated %}
+        <p>You are logged in as {{ user.username }}.</p>
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'signup' %}">register</a>.</p>
+    {% endif %}
+{% endblock %}
